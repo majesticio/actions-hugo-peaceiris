@@ -8,7 +8,7 @@ RUN apt-get update && \
     apt-get install -y --no-install-recommends \
     build-essential \
     libcurl4-gnutls-dev libexpat1-dev gettext libz-dev libssl-dev autoconf \
-    ca-certificates \
+    ca-certificates yarn \
     wget && \
     rm -rf /var/lib/apt/lists/* \
     && wget -O sass-embedded.tar.gz https://github.com/sass/dart-sass-embedded/releases/download/$1.56.1/sass_embedded-$1.56.1-linux-x64.tar.gz\
