@@ -10,7 +10,12 @@ RUN apt-get update && \
     libcurl4-gnutls-dev libexpat1-dev gettext libz-dev libssl-dev autoconf \
     ca-certificates \
     wget && \
-    rm -rf /var/lib/apt/lists/*
+    rm -rf /var/lib/apt/lists/* \
+    && wget -O sass-embedded.tar.gz https://github.com/sass/dart-sass-embedded/releases/download/$1.56.1/sass_embedded-$1.56.1-linux-x64.tar.gz\
+    && tar xf sass-embedded.tar.gz\
+    && mv ./sass_embedded/dart-sass-embedded /usr/bin/ ;\
+    chmod 755 /usr/bin/dart-sass-embedded &&\
+    rm -rf sass-embedded.tar.gz ;
 
 WORKDIR /git
 ENV GIT_VERSION="2.28.0"
